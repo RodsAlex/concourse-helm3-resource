@@ -52,10 +52,10 @@ setup_kubernetes() {
         kubectl config set-credentials admin --client-certificate=$cert_path --client-key=$key_path
       fi
 
-      kubectl config set-context default --cluster=default --user=admin
+      kubectl config set-context afk --cluster=afk --user=afk-admin
     else
-      kubectl config set-cluster default --server=$cluster_url
-      kubectl config set-context default --cluster=default
+      kubectl config set-cluster afk --server=$cluster_url
+      kubectl config set-context afk --cluster=afk
     fi
 
     kubectl config use-context default
